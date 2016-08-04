@@ -1,0 +1,98 @@
+<?php $this->headTitle()->prepend($this->translate('Paypal Settings')); ?>
+
+<?php 
+    $form = $this->form;
+    $form->prepare();
+    $form->setAttribute('action', $this->url(NULL, array( 'action' => 'process')));
+    $form->setAttribute('method', 'post');
+    echo $this->form()->openTag($form);
+?>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2><?php echo $this->translate('Paypal Settings') ?></h2>
+        <p><?php echo $this->translate('Set your preferences for the Paypal section of the website') ?></p>
+    </div>
+</div>
+
+<?php if ($this->error): ?>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-warning">
+                <?php echo $this->translate('There were one or more issues with your submission. Please correct them as indicated below.') ?>
+            </div>
+        </div>
+    </div>
+<?php endif ?>
+
+<div class="row">
+	<div class="col-lg-12">
+	    <div class="tab-pane active" id="tab1">
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('receiver')); ?>
+                <?php echo $this->formElement($form->get('receiver')); ?>
+                <?php echo $this->formElementErrors($form->get('receiver')); ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('fee')); ?>
+                <?php echo $this->formElement($form->get('fee')); ?>
+                <?php echo $this->formElementErrors($form->get('fee')); ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('feelowlimit')); ?>
+                <?php echo $this->formElement($form->get('feelowlimit')); ?>
+                <?php echo $this->formElementErrors($form->get('feelowlimit')); ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('feebase')); ?>
+                <?php echo $this->formElement($form->get('feebase')); ?>
+                <?php echo $this->formElementErrors($form->get('feebase')); ?>
+            </div>
+            <hr/>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('currency')); ?>
+                <?php echo $this->formElement($form->get('currency')); ?>
+                <?php echo $this->formElementErrors($form->get('currency')); ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('username')); ?>
+                <?php echo $this->formElement($form->get('username')); ?>
+                <?php echo $this->formElementErrors($form->get('username')); ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('password')); ?>
+                <?php echo $this->formElement($form->get('password')); ?>
+                <?php echo $this->formElementErrors($form->get('password')); ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('signature')); ?>
+                <?php echo $this->formElement($form->get('signature')); ?>
+                <?php echo $this->formElementErrors($form->get('signature')); ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('appid')); ?>
+                <?php echo $this->formElement($form->get('appid')); ?>
+                <?php echo $this->formElementErrors($form->get('appid')); ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('mode')); ?>
+                <?php echo $this->formElement($form->get('mode')); ?>
+                <?php echo $this->formElementErrors($form->get('mode')); ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('baseurl')); ?>
+                <?php echo $this->formElement($form->get('baseurl')); ?>
+                <?php echo $this->formElementErrors($form->get('baseurl')); ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('log')); ?>
+                <?php echo $this->formElement($form->get('log')); ?>
+                <?php echo $this->formElementErrors($form->get('log')); ?>
+            </div>
+        </div>
+        
+        <div class="text-center"><?php echo $this->formElement($form->get('submit')); ?></div>
+	</div>
+</div>
+
+<?php echo $this->form()->closeTag() ?>

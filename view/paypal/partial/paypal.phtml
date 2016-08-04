@@ -1,0 +1,12 @@
+<span class="tickets">
+    <?php foreach($this->links as $link): ?>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4><span class="summary"><?php echo $link['title'] ?></span></h4>
+                <p><i class="fa fa-ticket"></i> <?php echo $link['description'] ?></p>
+                <a title="<?php printf($this->translate('Book now for only %s %s'),  $link['currency'], $link['price']) ?>" class="btn btn-xs btn-primary" href="<?php echo $link['url'] ?>"><i class="fa fa-paypal"></i> <?php echo $this->translate('Pay with PayPal')?></a>
+            </div>
+        </div>
+    </span>
+    <hr/>
+<?php endforeach;?>
